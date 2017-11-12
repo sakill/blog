@@ -1,0 +1,295 @@
+body{
+    color: #555;
+    /*background: #eee;*/
+}
+header{
+	background:#31A9B3;
+	margin-bottom: 10px;
+}
+.header_top{
+	height: 34px;
+	background: #f6f6f6;
+}
+.header_top .welcome{
+	float: left;
+	padding-top: 7px;
+}
+.header_top .tip_mark{
+	padding-right: 10px;
+}
+.header_top  .orange{
+	color:#0099e3 !important
+}
+.header_top{
+	font-size: 12px;
+}
+
+nav{
+	height: 60px;
+}
+nav .nav_bar{
+	float: left;
+}
+.nav_bar ul{
+	position: relative;
+}
+.nav_bar li{
+	float: left;
+	position: relative;
+	width: 100px;
+	height: 60px;
+}
+/*.nav_bar li:last-child{*/
+	/*width: 100px;*/
+	/*height: 5px; */
+	/*overflow: hidden; */
+	/*background: #f77825; */
+	/*border: none; */
+	/*position: absolute;*/
+	 /*bottom:0; */
+	 /*left: 0; */
+    /*z-index: 1;*/
+/*}*/
+.nav_bar a:hover:before,.nav_bar li.active:before{
+	border: 5px solid transparent;
+	border-top: 5px solid #000;
+	position: absolute;
+	top: 0;
+	left: 47.5%;
+	content: "";
+}
+.nav_bar li a{
+	line-height: 60px;
+	color:#fff;
+	height: 60px;
+	display: block;
+	text-align: center;
+}
+.nav_bar li.active>a,.nav_bar li a:hover{
+	background: #eee;
+	color: #000;
+}
+nav .search{
+	padding-top:15px;
+	float: right;
+}
+.search .search_text{
+	width: 250px;
+	background: #fff;
+	height: 30px;
+	float: left;
+}
+.search_text input{
+	width: 240px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #000;
+	
+}
+.search .search_button{
+	float: right;
+}
+.search_button button{
+	width: 60px;
+	height: 30px;
+	background: green;
+	border: none;
+	cursor: pointer;
+	color:#eee;
+	font-weight: bold;
+}
+.w340 .introduce{
+	width:330px;
+}
+.introduce .bg_me{
+	background: url(../images/img_usercard_bg.jpg) no-repeat center center;
+	background-size: cover;
+	height: 120px;
+	text-align:center;
+	margin-bottom: 50px;
+}
+.bg_me img{
+	width: 120px;
+	border: 2px solid #f8f8f8;
+	border-radius: 50%;
+	margin-top: 35px;
+}
+.introduce .follow{
+	text-align: center;
+	line-height: 38px;
+	height: 40px;
+}
+.follow span{
+	width:40px;
+	height: 38px;
+	font-size: 20px;
+	padding: 0 5px;
+	display: inline-block;
+}
+.follow span a{
+	border-radius: 25px;
+	display: inline-block;
+	width: 40px;
+	height: 38px;
+}
+.follow span a:hover{
+	color:#fff;
+}
+.follow .t_qq a{
+	color:#4e91d1;
+}
+.follow .t_qq a:hover{
+	background: #4e91d1;
+}
+.follow .t_weibo a{
+	color:#c40000;
+}
+.follow .t_weibo a:hover{
+	background: #c40000;
+}
+.follow .t_github a:hover{
+	background:#555;
+}
+.follow .t_rss a{
+	color:#d28300;
+}
+.follow .t_rss a:hover{
+	background: #d28300;
+}
+.introduce .introduce_footer{
+	border-top:1px dashed #ddd;
+	margin-top:10px;
+	height: 40px;
+}
+.introduce_footer span{
+	font-size: 16px;
+	display: block;
+	float: left;
+	width: 165px;
+	text-align: center;
+	line-height: 40px;
+}
+.introduce_footer span:first-child{
+	width:164px;
+	border-right:1px dashed #ddd;
+}
+.ranking{
+	width:330px;
+}
+.ranking .rank_top{
+	padding: 10px;
+	padding-bottom:5px;
+}
+.rank_top ul{
+	border-bottom: 1px dashed #ddd;
+}
+.rank_top li{
+	width: 80px;
+	height: 30px;
+	float: left;
+	font-size: 16px;
+	line-height: 30px;
+	cursor: pointer;
+	text-align: center;
+	
+}
+.rank_top li:hover,.rank_top li.rank_active{
+	color:#fff;
+	background: orange;
+}
+.ranking .rank_article{
+	padding: 10px;
+	padding-top:0;
+	display: none;
+}
+.rank_article li{
+	margin-top: 5px;
+}
+.rank_article li a:hover{
+	color:#0099e3;
+}
+.li-icon{
+	background: #ccc;
+    font-size: 12px;
+    color: #fff;
+    line-height: 180%;
+    margin: 0 10px 0 0;
+    padding: 0 5px;
+    border-radius: 2px;
+
+}
+.li-icon-1{
+	background: #F12F25;
+}
+.li-icon-2{
+	background: #FF9531;
+}
+.li-icon-3{
+	background: #EFD21F;
+}
+
+.payme{
+	width: 310px;
+	padding: 10px;
+	text-align: center;
+}
+.payme h3{
+	height: 30px;
+	font-size: 18px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ddd;
+	height: 30px;
+	margin-bottom: 5px;
+}
+.payme p{
+	margin-top: 5px;
+}
+.payme img{
+	width: 100%;
+	height: 150px;
+}
+.link{
+	width: 310px;
+	padding: 10px;
+}
+.link h3{
+	height: 30px;
+	font-size: 18px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ddd;
+	height: 30px;
+	margin-bottom: 10px;
+}
+.link h3 span{
+	float: right;
+	font-size: 14px;
+}
+.link h3 span a{
+	color:green;
+}
+.link h3 span a:hover{
+	color: red;
+}
+.link li{
+	float: left;
+	height: 25px;
+	width:140px;
+	border-left: 5px solid #0099e3;
+	line-height: 25px;
+	padding-left: 5px;
+	margin-bottom: 5px;
+}
+.link li a:hover{
+	color: orange;
+}
+.index_footer{
+	background: #333;
+	text-align: center;
+	color: #999;
+	padding: 10px;
+}
+.index_footer p{
+	padding: 5px;
+}

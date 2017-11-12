@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <base href="http://www.sakill.com/">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="ueditor,ueditor编辑器上传图片添加水印" />
+    <meta name="description" content="ueditor编辑器上传图片添加水印" />
+    <title>sakill'blog</title>
+    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="stylesheet" href="public/home/css/base.css">
+    <link rel="stylesheet" href="public/home/css/article.css">
+    <link rel="stylesheet" href="public/home/css/public.css">
+    <link href="public/home/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="public/home/js/base.js"></script>
+    <script src="public/home/js/index.js"></script>
+    <!--[if IE]>
+    <link href="fontawesome-4.2.0/css/font-awesome-ie7.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<![endif]-->
+    <![endif]-->
+    <style>
+        .article-content img{
+            width: 700px;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<div class="header_top">
+			<div class="autobox">
+				<div class="welcome"><span class="tip_mark"><i class="fa fa-volume-up"></i></span>您好，欢迎来到我的博客！</div>
+				<div class="right pt_7 mr_20">
+					<div class="orange">
+						<a href="#">English</a>
+						<span class="zhuce">
+							<i class="fa fa-user-o"></i>
+							<a href="#" class="orange">注册</a>
+						</span>
+						|
+						<a href="#" class="orange">登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="autobox">
+			<div class="nav_bar">
+				<ul class="clear" id="onav">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="#">技术文章</a></li>
+					<li><a href="#">前端技术</a></li>
+					<li><a href="#">产品研发</a></li>
+					<li><a href="#">About Me</a></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="search">
+				<form method="get" id="searchform" action="#">
+				<div class="search_text"><input type="text" value="" name="s" id="s" placeholder="输入搜索内容" required=""></div>
+				<div class="search_button"><button type="submit" id="searchsubmit">搜索</button></div>
+				</form>
+			</div>
+		</nav>
+	</header>
+	<section class="clear mb_10">
+		<div class="autobox">
+			<div class="content w850 left">
+				<div class="breadcrumbs ">
+					<a title="返回首页" href="http://www.sakill.com"><i class="fa fa-home"></i></a>
+					<small>&gt;</small>
+					<a href="http://www.sakill.com/?cat=5">技术文章</a>
+					<small>&gt;</small>
+					<span>ueditor编辑器上传图片添加水印</span>
+				</div>
+				<header class="article-header ">
+					<h1 class="article-title"><a href="#">ueditor编辑器上传图片添加水印</a></h1>
+					<div class="meta">
+						<span><i class="fa fa-list-alt">&nbsp;</i><a href="#"> 技术文章</a></span>
+						<span><i class="fa fa-user">&nbsp;</i><a href="http://www.sakill.com/?author=1">sakill</a></span>
+						<span><i class="fa fa-clock-o">&nbsp;</i> 2017-09-11</span>
+						<span><i class="fa fa-eye">&nbsp;</i> 172℃</span>
+						<span><i class="fa fa-smile-o">&nbsp;</i><a target="_blank" title="点击查看" rel="external nofollow" href="#">百度已收录</a><span class="muted"></span>
+					</div>
+				</header>
+				<article>
+					<article class="article-content ">
+					<p><span style="">我开发网站差不多一年了，每天都会遇到非同寻常的难题，现在就说说我今天碰到的一个事情吧！</span><span style="color: rgb(70, 70, 70); font-family: &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, SimSun; font-size: 14px; background-color: rgb(188, 211, 229);"></span></p><p><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发网站的后台，我使用了<a href="http://ueditor.baidu.com/website/" target="_blank" style="text-decoration: none; color: rgb(62, 115, 160);"><span style="color:#285CFF">百度ueditor编辑器</span></a>，本以为是万无一失、至高无上的正确选择。其实我使用了插件就不想再去动插件里的程序代码，可偏偏就阴差阳错，策划那边来一个天方夜谭——使用编辑器上传的图片要添加水印。让人焦头烂额的事情就是这样发生了，因为ueditor编辑器是没有添加水印功能的。</span></p><p><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早上就开始在百度里遨游，看看php添加水印的函数，收集<span style="word-wrap: normal; word-break: normal; line-height: 21px;">ueditor编辑器添加水印的代码，然后整合在一起，相关的操作如下：</span></span></p><p><span style=""><strong><span style="word-wrap: normal; word-break: normal; line-height: 21px;">1.</span>打开ueditor目录下的php目录下的config.json&nbsp;文件</strong></span></p><p><em>1.1</em>&nbsp;&nbsp;&nbsp;&nbsp;在上传配置项添加下面代码：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;iswatermark&quot;: &quot;true&quot;, &nbsp;</p><p><span style=""><strong>2.打开ueditor目录下的php目录下的action_upload.php文件，搜索代码：</strong></span></p><p><em>2.1</em></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case &#39;uploadimage&#39;:</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$config = array(</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;pathFormat&quot; =&gt; $CONFIG[&#39;imagePathFormat&#39;],</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;maxSize&quot; =&gt; $CONFIG[&#39;imageMaxSize&#39;],</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;allowFiles&quot; =&gt; $CONFIG[&#39;imageAllowFiles&#39;]</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fieldName = $CONFIG[&#39;imageFieldName&#39;];</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p><p>在“break;”前添加：<span style="word-wrap: normal; word-break: normal; line-height: 21px;">$watermark =&nbsp;</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">$CONFIG[&#39;is</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">watermark</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">&#39;]</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">; 这句话就可以读取配置文件的&quot;</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">is</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">watermark</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">&quot;值了。</span></p><p><span style="word-wrap: normal; word-break: normal; line-height: 21px;"><em>2.2</em>&nbsp;&nbsp;&nbsp;</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">继续在这个文件搜索代码：</span></p><p>$up = new Uploader($fieldName, $config, $base64);</p><p>把它改成：$up = new Uploader($fieldName, $config, $base64, $watermark); &nbsp;&nbsp;这样就可以实例化<span style="word-wrap: normal; word-break: normal; line-height: 21px;">Uploader类时带上</span><span style="word-wrap: normal; word-break: normal; line-height: 21px;">$watermark变量。</span></p><p><span style="word-wrap: normal; word-break: normal; line-height: 21px;"><br/></span></p><p><strong><span style=""><span style="word-wrap: normal; word-break: normal; line-height: 21px;">3.这是最后一步，也是最重要的一步。打开</span>ueditor目录下的php目录下的Uploader.class.php文件。</span></strong></p><p><em>3.1</em>&nbsp;&nbsp;在这个类里面添加“ &nbsp;&nbsp;private $water; //是否添加水印(属性) &nbsp;&nbsp;”这句话。</p><p><em>3.2</em>&nbsp;&nbsp;把构造方法改成（public function __construct($fileField, $config, $type = &quot;upload&quot;, $watermark = false）。</p><p><em>3.3</em>&nbsp;&nbsp;在构造方法里面写上 &nbsp;（$this-&gt;water = $watermark; ）这句话。</p><p><em>3.4</em>&nbsp;&nbsp;在upFile 方法内部后面添加以下代码：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( $this-&gt;water ){&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;watermark($this-&gt;filePath,$this-&gt;filePath);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p><p><em>3.5</em>&nbsp;&nbsp;&nbsp;在这个类文件里添加以下方法，实现图片添加水印就靠它了。</p><p>【*</p><p>* 图片加水印</p><p>* $source &nbsp;string &nbsp;图片资源</p><p>* $target &nbsp;string &nbsp;添加水印后的名字</p><p>* $w_pos &nbsp;&nbsp;int &nbsp;&nbsp;&nbsp;&nbsp;水印位置安排（1-10）【1:左头顶；2:中间头顶；3:右头顶...值空:随机位置】</p><p>* $w_img &nbsp;&nbsp;string &nbsp;水印图片路径</p><p>* $w_text &nbsp;string &nbsp;显示的文字</p><p>* $w_font &nbsp;int &nbsp;&nbsp;&nbsp;&nbsp;字体大小</p><p>* $w_color string &nbsp;字体颜色</p><p>*】</p><p>public function watermark($source, $target = &#39;&#39;, $w_pos = &#39;&#39;, $w_img = &#39;&#39;, $w_text = &#39;www.aiyu.com&#39;,$w_font = 10, $w_color = &#39;#CC0000&#39;) {</p><p>$this-&gt;w_img = &#39;../watermark.png&#39;;//水印图片</p><p>$this-&gt;w_pos = 9;</p><p>$this-&gt;w_minwidth = 400;//最少宽度</p><p>$this-&gt;w_minheight = 200;//最少高度</p><p>$this-&gt;w_quality = 80;//图像质量</p><p>$this-&gt;w_pct = 85;//透明度</p><p>&nbsp;</p><p>$w_pos = $w_pos ? $w_pos : $this-&gt;w_pos;</p><p>$w_img = $w_img ? $w_img : $this-&gt;w_img;</p><p>if(!$this-&gt;check($source)) return false;</p><p>if(!$target) $target = $source;</p><p>$source_info = getimagesize($source);//图片信息</p><p>$source_w &nbsp;= $source_info[0];//图片宽度</p><p>$source_h &nbsp;= $source_info[1];//图片高度</p><p>if($source_w &lt; $this-&gt;w_minwidth || $source_h &lt; $this-&gt;w_minheight) return false;</p><p>switch($source_info[2]) { //图片类型</p><p>case 1 : //GIF格式</p><p>$source_img = imagecreatefromgif($source);</p><p>break;</p><p>case 2 : //JPG格式</p><p>$source_img = imagecreatefromjpeg($source);</p><p>break;</p><p>case 3 : //PNG格式</p><p>$source_img = imagecreatefrompng($source);</p><p>//imagealphablending($source_img,false); //关闭混色模式</p><p>&nbsp;&nbsp;&nbsp;imagesavealpha($source_img,true); //设置标记以在保存 PNG 图像时保存完整的 alpha 通道信息（与单一透明色相反）</p><p>break;</p><p>default :</p><p>return false;</p><p>}</p><p>if(!empty($w_img) &amp;&amp; file_exists($w_img)) { //水印图片有效</p><p>$ifwaterimage = 1; //标记</p><p>$water_info &nbsp;= getimagesize($w_img);</p><p>$width &nbsp;&nbsp;&nbsp;= $water_info[0];</p><p>$height &nbsp;&nbsp;&nbsp;= $water_info[1];</p><p>switch($water_info[2]) {</p><p>case 1 :</p><p>$water_img = imagecreatefromgif($w_img);</p><p>break;</p><p>case 2 :</p><p>$water_img = imagecreatefromjpeg($w_img);</p><p>break;</p><p>case 3 :</p><p>$water_img = imagecreatefrompng($w_img);</p><p>imagealphablending(<span style="word-wrap: normal; word-break: normal; line-height: 21px;">$water_img</span>,false);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imagesavealpha(<span style="word-wrap: normal; word-break: normal; line-height: 21px;">$water_img</span>,true);</p><p>break;</p><p>default :</p><p>return;</p><p>}</p><p>}else{</p><p>$ifwaterimage = 0;</p><p>$temp = imagettfbbox(ceil($w_font*2.5), 0, &#39;../../texb.ttf&#39;, $w_text); //imagettfbbox返回一个含有 8 个单元的数组表示了文本外框的四个角</p><p>$width = $temp[2] - $temp[6];</p><p>$height = $temp[3] - $temp[7];</p><p>unset($temp);</p><p>}</p><p>&nbsp;</p><p>switch($w_pos) {</p><p>case 1:</p><p>$wx = 5;</p><p>$wy = 5;</p><p>break;</p><p>case 2:</p><p>$wx = ($source_w - $width) / 2;</p><p>$wy = 0;</p><p>break;</p><p>case 3:</p><p>$wx = $source_w - $width;</p><p>$wy = 0;</p><p>break;</p><p>case 4:</p><p>$wx = 0;</p><p>$wy = ($source_h - $height) / 2;</p><p>break;</p><p>case 5:</p><p>$wx = ($source_w - $width) / 2;</p><p>$wy = ($source_h - $height) / 2;</p><p>break;</p><p>case 6:</p><p>$wx = $source_w - $width;</p><p>$wy = ($source_h - $height) / 2;</p><p>break;</p><p>case 7:</p><p>$wx = 0;</p><p>$wy = $source_h - $height;</p><p>break;</p><p>case 8:</p><p>$wx = ($source_w - $width) / 2;</p><p>$wy = $source_h - $height;</p><p>break;</p><p>case 9:</p><p>$wx = $source_w - ($width+5);</p><p>$wy = $source_h - ($height+5);</p><p>break;</p><p>case 10:</p><p>$wx = rand(0,($source_w - $width));</p><p>$wy = rand(0,($source_h - $height));</p><p>break; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>default:</p><p>$wx = rand(0,($source_w - $width));</p><p>$wy = rand(0,($source_h - $height));</p><p>break;</p><p>}</p><p>&nbsp;</p><p>if($ifwaterimage) {</p><p>if($water_info[2] == 3) {</p><p>imagecopy($source_img, $water_img, $wx, $wy, 0, 0, $width, $height);</p><p>}else{</p><p>imagecopymerge($source_img, $water_img, $wx, $wy, 0, 0, $width, $height, $this-&gt;w_pct);</p><p>}</p><p>}else{</p><p>if(!empty($w_color) &amp;&amp; (strlen($w_color)==7)) {</p><p>$r = hexdec(substr($w_color,1,2));</p><p>$g = hexdec(substr($w_color,3,2));</p><p>$b = hexdec(substr($w_color,5));</p><p>}else{</p><p>return;</p><p>}</p><p>imagestring($source_img,$w_font,$wx,$wy,$w_text,imagecolorallocate($source_img,$r,$g,$b));</p><p>}</p><p>&nbsp;&nbsp;</p><p>switch($source_info[2]) {</p><p>case 1 :</p><p>imagegif($source_img, $target);&nbsp;</p><p>//GIF 格式将图像输出到浏览器或文件(欲输出的图像资源, 指定输出图像的文件名)</p><p>break;</p><p>case 2 :</p><p>imagejpeg($source_img, $target, $this-&gt;w_quality);</p><p>break;</p><p>case 3 :</p><p>imagepng($source_img, $target);</p><p>break;</p><p>default :</p><p>return;</p><p>}</p><p>&nbsp;</p><p>if(isset($water_info)){</p><p>unset($water_info);</p><p>}</p><p>if(isset($water_img)) {</p><p>imagedestroy($water_img);</p><p>}</p><p>unset($source_info);</p><p>imagedestroy($source_img);</p><p>return true;</p><p>}</p><p>public function check($image){</p><p>return extension_loaded(&#39;gd&#39;) &amp;&amp; preg_match(&quot;/\.(jpg|jpeg|gif|png)/i&quot;, $image, $m) &amp;&amp; file_exists($image) &amp;&amp; function_exists(&#39;imagecreatefrom&#39;.($m[1] == &#39;jpg&#39; ? &#39;jpeg&#39; : $m[1]));</p><p>}</p><p><strong><span style="">4.别以为这就完事了，做程序员不但要聪明，而且还要&nbsp;careful。上面的工作过程只是一个内核而已，水印图片才是主角咧。</span></strong></p><p><em>4.1</em>&nbsp;&nbsp;把水印图片命名为watermark.png，把它存放在ueditor目录下。如果你觉得这样不好，那么你在步骤3.4时候就写你水印图片的路径，温馨提醒一下：ueditor目录下的php目录是当前目录。</p><p>现在我们就看看效果吧</p><p style="text-align:center"><img src="/public/ueditor/upload/image/20170906/1504704821555350.jpg" title="1504704821555350.jpg" alt="eff2d9a1e4f9a3ad2f85ae09e8145c34.jpg" width="729" height="260"/></p><p><br/></p>                    </article>
+				</article>
+                            <!-- UY BEGIN -->
+                <div id="uyan_frame"></div>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143651"></script>
+                <!-- UY END -->
+			</div>
+			<div class="right w340">
+				<aside class="right">
+					<div class="introduce	border">
+						<div class="p_10 pb_0">
+							<div class="bg_me">
+								<img src="public/home/images/public_qr.png" alt="公众号二维码">
+							</div>
+							<div class="mb_10">
+								<h6 class="f_center f_size_16 f_bold mb_10">SAKILL_Blog</h6>
+								<p>关注前端技术和分享前端技术，致力作为一名优秀的前端工程师。</p>
+							</div>
+							<div class="follow clear">
+								<span class="t_qq"><a href="http://wpa.qq.com/msgrd?V=3&amp;uin=1017615760&amp;Site=QQ&amp;Menu=yes"><i class="fa fa-qq"></i></a></span>
+								<span class="t_weibo"><a href="http://weibo.com/573530077"><i class="fa fa-weibo"></i></a></span>
+								<span class="t_github"><a href="http://github.com/sakill/"><i class="fa fa-github"></i></a></span>
+								<span class="t_rss"><a href="http://weibo.com/573530077"><i class="fa fa-rss"></i></a></span>
+							</div>
+						</div>
+						<div class="introduce_footer">
+							<span>文章&nbsp;488</span>
+							<span>留言&nbsp;655</span>
+						</div>
+					</div>
+				</aside>
+				<aside class="right  mt_10">
+					<div class="ranking  border">
+						<div class="rank_top clear">
+							<ul class="clear" id="rank_ul">
+								<li class="rank_active">阅读排行</li>
+								<li>热评排行</li>
+								<li>推荐文章</li>
+							</ul>
+						</div>
+						<div class="rank_article" style="display:block;">
+							<ul>
+								<li><span class="li-icon li-icon-1">1</span><a href="#">大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon li-icon-2">2</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon li-icon-3">3</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">4</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+								<li><span class="li-icon">5</span><a href="#">油猴子插件与百度云网页下载插件</a></li>
+								<li><span class="li-icon ">6</span><a href="#">大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon">7</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon">8</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">9</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+							</ul>
+						</div>
+						<div class="rank_article" >
+							<ul>
+								<li><span class="li-icon li-icon-1">1</span><a href="#">2大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon li-icon-2">2</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon li-icon-3">3</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">4</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+								<li><span class="li-icon">5</span><a href="#">油猴子插件与百度云网页下载插件</a></li>
+								<li><span class="li-icon ">6</span><a href="#">大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon">7</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon">8</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">9</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+							</ul>
+						</div>
+						<div class="rank_article" >
+							<ul>
+								<li><span class="li-icon li-icon-1">1</span><a href="#">3大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon li-icon-2">2</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon li-icon-3">3</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">4</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+								<li><span class="li-icon">5</span><a href="#">油猴子插件与百度云网页下载插件</a></li>
+								<li><span class="li-icon ">6</span><a href="#">大型日志文本转存elasticsearch</a></li>
+								<li><span class="li-icon">7</span><a href="#">Apk 逆向破解工具–apk改之理</a></li>
+								<li><span class="li-icon">8</span><a href="#">简单VIP歌曲下载方法</a></li>
+								<li><span class="li-icon">9</span><a href="#">Segmentation fault (core dumped) 处理</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+				<aside class="right mt_10">
+					<div class="payme	border">
+						<h3>赞助SAKILL</h3>
+						<p>你的赞赏将带给我全新的动力！</p>
+						<p>请用<span style="color:orange">微信</span>或者<span style="color:#33cccc">支付宝</span>客户端扫描二维码</p>
+						<p style="color:red;">一分一毛也是情义</p>
+						<img src="public/home/images/sakill_pay.png" alt="">
+						<p style="color:#ff6600">祝您生意兴隆，身体安康！</p>
+					</div>
+				</aside>
+				<aside class="right mt_10">
+					<div class="link	border">
+						<h3>友情链接 <span><a href="#">[申请友联]</a></span></h3>
+						<ul class="clear">
+							<li><a href="http://www.erhuo.org">许繁博客</a></li>
+							<li><a href="http://www.inzhuo.cn">宇卓博客</a></li>
+							<li><a href="http://www.chengyin.org">诚殷网络论坛</a></li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<footer class="index_footer">
+		<p>theme by sakill.欢迎光临！</p>
+		<p>技术交流QQ群：212495556</p>
+		<p>© 2014-2017 <a href="http://www.sakill.com" style="color:#76838f;">sakill</a>版权所有</p>
+		<p>网站备案号：渝ICP备15004066号</p>
+	</footer>
+
+	<ul id="scroll">
+		<li id="scroll_top"><a class="scroll-h" title="返回顶部"><i class="fa fa-arrow-up"></i></a></li>
+		<li id="scroll_bottom"><a class="scroll-b" title="转到底部"><i class="fa fa-arrow-down"></i></a></li>
+		<li class="qqonline">
+			<a href="javascript:void(0)" id="contact_a"><i class="fa fa-qq"></i></a>
+			<div class="qqonline-main"  id="contact_b" style="display:none;">
+				<div class="nline-wiexin">
+					<h4>微信</h4>
+					<img title="微信" src="public/home/images/me.jpg">
+				</div>
+				<div class="nline-qq">
+					<a target="blank" href="http://wpa.qq.com/msgrd?V=3&amp;uin=1017615760&amp;Site=QQ&amp;Menu=yes">
+					<i class="fa fa-qq"></i>在线咨询</a>
+				</div>
+			</div>
+		</li>
+		<li >
+			<a href="javascript:void(0)" id="qra" class="qr" title="二维码"><i class="fa fa-qrcode"></i></a>
+			<div id="qrb" class="qr_code" style="display:none;">
+				<img src="public/home/images/public_qr.png" alt="">
+			</div>
+		</li>
+	</ul>
+	<script>
+		window.onload=function (){
+			nav();
+			scroll();
+			rank_change();
+		};
+	</script>
+
+</body>
+</html>
+

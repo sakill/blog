@@ -1,0 +1,238 @@
+*{
+	margin: 0;
+	padding:0;
+}
+body{
+	font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+    line-height: 20px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	border: none;
+	color:#555;
+}
+a:focus{outline:none;}
+ul{
+	list-style: none;
+}
+img{
+	border: none;
+	vertical-align: middle;
+}
+.autobox{
+	width: 1210px;
+	margin: 0 auto;
+}
+.clear{
+	clear: both;
+}
+.clear:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+.pt_7{
+	padding-top:7px;
+}
+.pr_20{
+	padding-right: 20px;
+}
+.mr_20{
+	margin-right: 20px;
+}
+.mb_10{
+	margin-bottom: 10px;
+}
+.mb_20{
+	margin-bottom: 20px;
+}
+.mt_10{
+	margin-top: 10px;
+}
+.p_10{
+	padding: 10px;
+}
+.pb_0{
+	padding-bottom: 0;
+}
+input{
+    background: #fff;
+    outline: none;
+    vertical-align: middle;
+    border: none;
+    outline:medium;
+}
+.f_color_0033ff{
+	color:#0033ff !important;
+	font-weight: bold;
+}
+.border{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+.f_size_16{
+	font-size: 16px;
+}
+.f_center{
+	text-align: center;
+}
+.f_bold{
+	font-weight: bold;
+}
+.w310{
+	width: 310px;
+}
+.w340{
+	width: 340px;
+}
+.w850{
+	width: 850px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*滚动条样式*/
+#scroll{
+	width: 32px;
+	position: fixed;
+	right: 5px;
+	bottom: 50px;
+}
+#scroll li{
+	height: 32px;
+	margin-top: 4px;
+}
+#scroll li a {
+    font-size: 16px;
+    color: #f8f8f8;
+    height: 32px;
+    width: 32px;
+    line-height:32px;
+    text-align: center;
+    border-radius: 2px; 
+    display: block;
+    cursor: pointer;
+}
+#scroll li a:hover{
+	background:#3496e6;
+}
+.scroll-h {
+    background-color: #ff5e5c;
+}
+.scroll-b{
+	background: #ff9531;
+}
+.qqonline{
+	background:#24a5db;
+}
+.qqonline .qqonline-main{
+	padding: 10px;
+	border-radius: 5px;
+	background: rgba(255,255,255,0.9);
+	width:100px;
+	height: 173px;
+	border: 1px solid #ddd;
+	position: absolute;
+	bottom: -10px;
+	right: 40px;
+	text-align: center;
+}
+.qqonline-main .nline-wiexin{
+	height: 132px;
+	overflow: hidden;
+}
+.nline-wiexin h4{
+	font-weight: bold;
+	height: 25px;
+	line-height: 25px;
+}
+.nline-wiexin img{
+	width: 100%;
+	height: auto;
+}
+.qqonline-main .nline-qq{
+	height: 32px;
+}
+.nline-qq a{
+	width: 100px !important;
+	border-radius: 5px !important;
+	background: #f40;
+}
+.nline-qq a:hover{
+	border-radius: 5px !important;
+}
+.qr{
+	background: #2a363c;
+}
+.qr_code{
+	padding: 10px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: -15px;
+	right: 40px;
+	border: 1px solid #ddd;
+}
+.qr_code img{
+	height: 150px;
+	width:150px;
+}
+/*分页*/
+.center{text-align: center;}
+.fr{float: right;}
+.turnPage{margin:1em 0;}
+.turnPage a{display:inline-block;border:1px #8ca3c0 solid;padding:5px 10px;cursor:pointer;background:#96aecd;color:#fff;}
+.turnPage a:hover{background:#85a4cb;}

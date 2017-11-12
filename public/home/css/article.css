@@ -1,0 +1,32 @@
+.content{
+	padding:0 10px;
+}
+.breadcrumbs{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.content .article-header{
+	background: #fff;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+.article-header .article-title{
+	height: 60px;
+	margin: 5px 0;
+	line-height:60px;
+	font-size: 24px;
+}
+.meta span{
+	margin-right: 20px;
+}
+
+.content article{
+	padding: 10px;
+	padding-top: 0;
+	line-height: 25px;
+	color: #333;
+	font-size: 15px;
+}
